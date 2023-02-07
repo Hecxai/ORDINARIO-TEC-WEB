@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ORDINARIO_TEC_WEB.Models.Proveedore>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista de proveedores</h1>
+
+<p>
+    <a asp-action="Create">Crear nuevo proveedor</a>
+</p>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+@foreach (var item in Model) {
+        <div class="col">
+        <div class="card text-white bg-primary" style="max-width: 19rem;">
+            <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top" alt="...">
+             <div class="card-body">
+            <h5 class="card-title">
+                @Html.DisplayFor(modelItem => item.NombreProv)
+            </h5>
+            <h6>
+                @Html.DisplayFor(modelItem => item.DireccionProv)
+            </h6>
+            <h6>
+                @Html.DisplayFor(modelItem => item.TelefonoProv)
+            </h6>
+            <h6>
+                @Html.DisplayFor(modelItem => item.CorreoProv)
+            </h6>
+            </div>
+             <div class="card-body">
+                <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.IdProv">Editar</a> |
+                <a asp-action="Details" class="btn btn-secondary" asp-route-id="@item.IdProv">Detalles</a> |
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.IdProv">Eliminar</a>
+            </div>
+        </div>
+        </div>
+}
+</div>

@@ -1,0 +1,49 @@
+﻿@model ORDINARIO_TEC_WEB.Models.Producto
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<h4>Producto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdProd" />
+            <div class="form-group">
+                <label asp-for="NombreProd" class="control-label"></label>
+                <input asp-for="NombreProd" class="form-control" />
+                <span asp-validation-for="NombreProd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrecioProd" class="control-label"></label>
+                <input asp-for="PrecioProd" class="form-control" />
+                <span asp-validation-for="PrecioProd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockProd" class="control-label"></label>
+                <input asp-for="StockProd" class="form-control" />
+                <span asp-validation-for="StockProd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescripcionProd" class="control-label"></label>
+                <input asp-for="DescripcionProd" class="form-control" />
+                <span asp-validation-for="DescripcionProd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

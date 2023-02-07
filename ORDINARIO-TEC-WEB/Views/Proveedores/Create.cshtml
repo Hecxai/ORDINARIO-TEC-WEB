@@ -1,0 +1,48 @@
+﻿@model ORDINARIO_TEC_WEB.Models.Proveedore
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Crear</h1>
+
+<h4>Proveedores</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NombreProv" class="control-label"></label>
+                <input asp-for="NombreProv" class="form-control" />
+                <span asp-validation-for="NombreProv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DireccionProv" class="control-label"></label>
+                <input asp-for="DireccionProv" class="form-control" />
+                <span asp-validation-for="DireccionProv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelefonoProv" class="control-label"></label>
+                <input asp-for="TelefonoProv" class="form-control" />
+                <span asp-validation-for="TelefonoProv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CorreoProv" class="control-label"></label>
+                <input asp-for="CorreoProv" class="form-control" />
+                <span asp-validation-for="CorreoProv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

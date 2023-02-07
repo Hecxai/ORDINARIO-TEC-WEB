@@ -1,0 +1,44 @@
+﻿@model ORDINARIO_TEC_WEB.Models.Cliente
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<h4>Cliente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdCli" />
+            <div class="form-group">
+                <label asp-for="NombreCli" class="control-label"></label>
+                <input asp-for="NombreCli" class="form-control" />
+                <span asp-validation-for="NombreCli" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DireccionCli" class="control-label"></label>
+                <input asp-for="DireccionCli" class="form-control" />
+                <span asp-validation-for="DireccionCli" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelfonoCli" class="control-label"></label>
+                <input asp-for="TelfonoCli" class="form-control" />
+                <span asp-validation-for="TelfonoCli" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
